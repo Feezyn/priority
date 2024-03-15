@@ -156,22 +156,22 @@ class AlertMessengerState extends State<AlertMessenger>
       if (minorPriorityAlertWidget.isEmpty) {
         minorPriorityAlertWidget.add(alert);
       } else {
-        List<Alert> errors = minorPriorityAlertWidget
+        List<Alert> priorities = minorPriorityAlertWidget
             .where((element) => element.priority.value != 2)
             .toList();
-        int index = errors.isNotEmpty
-            ? minorPriorityAlertWidget.indexOf(errors.last)
+        int index = priorities.isNotEmpty
+            ? minorPriorityAlertWidget.indexOf(priorities.last)
             : minorPriorityAlertWidget.length;
         minorPriorityAlertWidget.insert(index, alert);
       }
     } else {
       if (minorPriorityAlertWidget.isNotEmpty) {
-        List<Alert> errors = minorPriorityAlertWidget
+        List<Alert> priorities = minorPriorityAlertWidget
             .where((element) =>
                 element.priority.value != 1 && element.priority.value != 2)
             .toList();
-        int index = errors.isNotEmpty
-            ? minorPriorityAlertWidget.indexOf(errors.last)
+        int index = priorities.isNotEmpty
+            ? minorPriorityAlertWidget.indexOf(priorities.last)
             : minorPriorityAlertWidget.length;
         minorPriorityAlertWidget.insert(index, alert);
       } else {
